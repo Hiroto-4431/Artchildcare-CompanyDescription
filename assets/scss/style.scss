@@ -1,0 +1,1333 @@
+@use "reset";
+@use "common";
+@use "mixin";
+
+/*********************************/
+/*            PC Base            */
+/*********************************/
+
+/* 共通パーツ */
+html {
+  position: relative;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+body {
+  // min-height: 100vh;
+  // min-height: calc(var(--vh, 1vh) * 100);
+}
+
+main {
+  max-width: 100rem;
+  margin: 0 auto;
+
+  @include common.lg {
+    max-width: 90rem;
+  }
+
+  @include common.md {
+    max-width: 45rem;
+  }
+
+  @include common.sp {
+    max-width: 33.5rem;
+  }
+}
+
+// タイトル
+.section-title {
+  margin-top: 7rem;
+
+  .common-title {
+    font-family: mixin.$Noto;
+    color: mixin.$gray;
+    font-size: 2.8rem;
+    font-weight: mixin.$bold;
+    line-height: 1.21;
+    letter-spacing: 0.1em;
+    margin-bottom: 3.5rem;
+
+    @include common.sp {
+      font-size: 2.2rem;
+      line-height: 1.18;
+      margin-bottom: 2.3rem;
+    }
+  }
+
+  .common-text {
+    font-family: mixin.$Noto;
+    color: mixin.$gray;
+    font-size: 1.6rem;
+    font-weight: mixin.$regular;
+    line-height: 2;
+    letter-spacing: 0.06em;
+
+    @include common.sp {
+      font-size: 1.4rem;
+      line-height: 1.71;
+    }
+  }
+}
+
+// トピックパス
+.topic-path {
+  margin-top: 10.6rem;
+
+  @include common.md {
+    margin-top: 7.2rem;
+  }
+
+  ul {
+    display: flex;
+    text-align: center;
+    width: 53.7rem;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    @include common.md {
+      width: 30.8rem;
+    }
+
+    li {
+      width: 7.5rem;
+      position: relative;
+
+      @include common.md {
+        width: 6.2rem;
+      }
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        width: 10rem;
+        height: 0.2rem;
+        background-color: mixin.$off-white;
+        top: 2rem;
+        left: 6.4rem;
+
+        @include common.md {
+          width: 4.5rem;
+          top: 1.5rem;
+          left: 5rem;
+        }
+      }
+
+      .topic-path__num {
+        font-family: mixin.$Roboto;
+        color: mixin.$gray;
+        font-size: 1.8rem;
+        font-weight: mixin.$bold;
+        line-height: 3.6rem;
+        margin: 0 auto 2rem;
+        width: 3.6rem;
+        height: 3.6rem;
+        border-radius: 50%;
+        background-color: mixin.$off-white;
+        border: 0.2rem solid mixin.$off-white;
+
+        @include common.md {
+          font-size: 1.4rem;
+          line-height: 2.8rem;
+          margin: 0 auto 1rem;
+          width: 2.8rem;
+          height: 2.8rem;
+        }
+      }
+
+      .topic-path__text {
+        font-family: mixin.$Noto;
+        color: #6c6c6c;
+        font-size: 1.4rem;
+        font-weight: mixin.$medium;
+        line-height: 1.21;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+
+        @include common.md {
+          font-size: 1.2rem;
+          line-height: 1.17;
+        }
+      }
+
+      .current-position__num {
+        color: mixin.$white;
+        background-color: mixin.$pink;
+        border: 0.2rem solid mixin.$pink;
+      }
+
+      .current-position__text {
+        color: mixin.$pink;
+      }
+
+      .before-position__num {
+        color: mixin.$pink;
+        background-color: mixin.$white;
+        border: 0.2rem solid mixin.$pink;
+      }
+
+      .before-position__text {
+        color: mixin.$pink;
+      }
+    }
+
+    .before-position__path {
+      &::after {
+        background-color: mixin.$pink !important;
+      }
+    }
+  }
+}
+
+// 前へ戻る
+.content-back {
+  margin-top: 3.4rem;
+  margin-bottom: 15.85rem;
+
+  @include common.md {
+    margin-top: 4.4rem;
+    margin-bottom: 12.4rem;
+  }
+
+  a {
+    font-family: mixin.$Noto;
+    color: #6c6c6c;
+    font-size: 1.4rem;
+    font-weight: mixin.$medium;
+    line-height: 1.71;
+    letter-spacing: 0.06em;
+    text-decoration: underline;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    i {
+      margin-right: 1rem;
+    }
+  }
+}
+
+/* 個別パーツ */
+.header {
+  width: 100%;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  background-color: mixin.$white;
+  box-shadow: 0 0 0.6rem 0 rgba(175, 175, 175, 0.16);
+
+  @include common.md {
+    height: 3.2rem;
+  }
+
+  &__logo {
+    height: 3rem;
+    margin-left: 3rem;
+
+    @include common.md {
+      height: 2rem;
+      margin-left: 2rem;
+    }
+
+    @include common.sp {
+      display: flex;
+      align-items: center;
+      height: auto;
+      max-width: 90%;
+      max-height: 2rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      &:nth-of-type(1) {
+        @include common.md {
+          display: none;
+        }
+      }
+
+      &:nth-of-type(2) {
+        display: none;
+
+        @include common.md {
+          display: block;
+        }
+      }
+
+      @include common.sp {
+        max-height: 2rem;
+      }
+    }
+
+    a {
+      @include common.sp {
+        height: auto;
+        max-width: 90%;
+        max-height: 2rem;
+      }
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+#index {
+  // 「エリア選択」ページ
+  .area {
+    &__content {
+      position: relative;
+      height: 50rem;
+      margin-bottom: 15.6rem;
+
+      @include common.md {
+        height: auto;
+        margin-bottom: auto;
+      }
+
+      &--text {
+        width: 52.3rem;
+
+        @include common.md {
+          width: auto;
+        }
+      }
+
+      &--button {
+        width: 14.4rem;
+        height: 4rem;
+        border-radius: 2rem;
+        background-color: mixin.$light-red;
+
+        &:hover {
+          background-color: mixin.$deep-red;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          font-family: mixin.$Noto;
+          color: mixin.$white;
+          font-size: 1.4rem;
+          font-weight: mixin.$medium;
+          line-height: 4rem;
+          letter-spacing: 0.1em;
+          justify-content: center;
+        }
+
+        &--name {
+          margin-right: 1.5rem;
+        }
+      }
+
+      &--map {
+        position: absolute;
+        width: 64rem;
+        height: 47rem;
+        top: 1.3rem;
+        right: 7.7rem;
+        // margin-bottom: 11rem;
+
+        @include common.md {
+          display: none;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        .hokkaido-btn {
+          position: absolute;
+          top: 6rem;
+          right: -7.5rem;
+          width: calc(14.4rem + 1em);
+        }
+
+        .tohoku-btn {
+          position: absolute;
+          top: 17rem;
+          right: -2rem;
+        }
+
+        .kanto-btn {
+          position: absolute;
+          top: 29rem;
+          right: 2.5rem;
+        }
+
+        .tyubu-btn {
+          position: absolute;
+          top: 27rem;
+          right: 23rem;
+        }
+
+        .nishinihon-btn {
+          position: absolute;
+          top: 34.5rem;
+          right: 33rem;
+          width: calc(14.4rem + 1em);
+        }
+
+        .kyusyu-btn {
+          position: absolute;
+          top: 38.5rem;
+          right: 50rem;
+        }
+      }
+
+      &--map-sp {
+        display: none;
+
+        @include common.md {
+          display: block;
+          width: 45rem;
+          margin-top: 3.6rem;
+          padding-bottom: 12.2rem;
+        }
+
+        @include common.sp {
+          width: 33.5rem;
+        }
+
+        ul {
+          li {
+            border-bottom: 0.1rem solid #efefef;
+            border-right: 0.1rem solid #efefef;
+            border-left: 0.1rem solid #efefef;
+
+            &:first-of-type {
+              border-top: 0.1rem solid #efefef;
+            }
+          }
+        }
+      }
+
+      &--map-cell {
+        width: 40.5rem;
+        justify-content: space-between;
+        font-family: mixin.$Noto;
+        color: #6c6c6c;
+        font-size: 1.5rem;
+        font-weight: mixin.$medium;
+        line-height: 5rem;
+        letter-spacing: 0.1em;
+        display: flex;
+        align-items: center;
+        padding-left: 2rem;
+
+        @include common.sp {
+          width: 29.5rem;
+        }
+
+        &--name {
+          display: block;
+        }
+      }
+    }
+  }
+
+  // 「日程選択」ページ
+  .date {
+    &__method {
+      width: 100rem;
+      height: 26.2rem;
+      background-color: mixin.$off-white;
+      border-radius: 1rem;
+      border: 0.2rem dotted #efefef;
+      margin: 6rem auto 0;
+
+      @include common.lg {
+        width: 90rem;
+        height: 30rem;
+      }
+
+      @include common.md {
+        width: 45rem;
+        height: 40rem;
+      }
+
+      @include common.sp {
+        width: 33.5rem;
+        height: auto;
+      }
+
+      &--title {
+        font-family: mixin.$Noto;
+        color: mixin.$gray;
+        font-size: 1.8rem;
+        font-weight: mixin.$medium;
+        line-height: 1.22;
+        letter-spacing: 0.06em;
+        margin: 3.5rem 3rem 1.8rem 3rem;
+
+        @include common.sp {
+          font-size: 1.6rem;
+          line-height: 1.19;
+          margin: 2.5rem 2rem 2.3rem;
+        }
+      }
+
+      &--text {
+        font-family: mixin.$Noto;
+        color: mixin.$gray;
+        font-size: 1.4rem;
+        font-weight: mixin.$regular;
+        line-height: 1.71;
+        letter-spacing: 0.06em;
+        // width: 94rem;
+        margin: 0 3rem;
+
+        @include common.sp {
+          margin: 0 2rem;
+        }
+      }
+
+      &--img {
+        display: flex;
+        padding: 3rem 3rem 0;
+        justify-content: space-between;
+
+        @include common.md {
+          flex-wrap: wrap;
+        }
+
+        @include common.sp {
+          display: none;
+        }
+
+        li {
+          width: 21rem;
+
+          @include common.lg {
+            width: 19rem;
+            padding-bottom: 1rem;
+          }
+        }
+      }
+
+      &-sp {
+        &--img {
+          display: none;
+
+          @include common.sp {
+            display: flex;
+            flex-wrap: wrap;
+            width: 29.4rem;
+            margin: 1.6rem auto 0;
+            justify-content: space-between;
+            padding-bottom: 1.5rem;
+
+            li {
+              width: 14.5rem;
+              padding-bottom: 0.4rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__content {
+      &--text {
+        width: 88.2rem;
+
+        @include common.md {
+          max-width: 45rem;
+        }
+
+        @include common.sp {
+          max-width: 33.5rem;
+        }
+      }
+
+      &--schedule {
+        margin-top: 6.8rem;
+      }
+
+      &--subtitle {
+        font-family: mixin.$Noto;
+        color: mixin.$gray;
+        font-size: 1.4rem;
+        font-weight: mixin.$medium;
+        line-height: 1.71;
+        letter-spacing: 0.06em;
+        border-bottom: 0.2rem dotted mixin.$off-white;
+
+        em {
+          font-size: 1.8rem;
+          line-height: 1.34;
+          color: mixin.$pink;
+          font-style: normal;
+          margin-right: 0.5rem;
+        }
+      }
+
+      // PC版
+      &--table {
+        width: 100rem;
+        margin-top: 2rem;
+        border-collapse: collapse;
+
+        @include common.lg {
+          max-width: 90rem;
+        }
+
+        @include common.md {
+          display: none;
+        }
+
+        th,
+        td {
+          border: solid 0.1rem #efefef;
+        }
+
+        &--title {
+          font-family: mixin.$Noto;
+          color: mixin.$gray;
+          font-size: 1.4rem;
+          font-weight: mixin.$medium;
+          line-height: 6rem;
+          letter-spacing: 0.06em;
+
+          background-color: mixin.$off-white;
+        }
+
+        .table__date {
+          width: 18rem;
+          text-align: center;
+          vertical-align: middle;
+
+          &--content {
+            text-align: center;
+            vertical-align: middle;
+            font-family: mixin.$Noto;
+            color: mixin.$gray;
+            font-size: 1.4rem;
+            font-weight: mixin.$regular;
+            line-height: 1.71;
+            letter-spacing: 0.06em;
+          }
+        }
+
+        .table__place {
+          width: 46rem;
+          text-align: center;
+          vertical-align: middle;
+
+          &--content {
+            vertical-align: middle;
+
+            &--wrap {
+              width: 40rem;
+              margin: 0 auto;
+              min-height: 12rem;
+              display: table;
+            }
+
+            &--text {
+              width: 40rem;
+              margin: 0 auto;
+              display: table-cell;
+              vertical-align: middle;
+            }
+
+            &--title {
+              display: block;
+              text-align: left;
+              font-family: mixin.$Roboto;
+              color: mixin.$pink;
+              font-size: 1.6rem;
+              font-weight: mixin.$medium;
+              line-height: 1.5;
+              letter-spacing: 0.06em;
+              margin-bottom: 1rem;
+            }
+
+            &--sub {
+              display: block;
+              text-align: left;
+              font-family: mixin.$Noto;
+              color: mixin.$gray;
+              font-size: 1.4rem;
+              font-weight: mixin.$regular;
+              line-height: 1.71;
+              letter-spacing: 0.06em;
+            }
+          }
+        }
+
+        .table__time {
+          width: 18rem;
+          text-align: center;
+          vertical-align: middle;
+          vertical-align: middle;
+
+          &--content {
+            text-align: center;
+            vertical-align: middle;
+            font-family: mixin.$Noto;
+            color: mixin.$gray;
+            font-size: 1.4rem;
+            font-weight: mixin.$regular;
+            line-height: 6rem;
+            letter-spacing: 0.06em;
+          }
+        }
+
+        .table__reserve {
+          width: 18rem;
+          text-align: center;
+
+          &--content {
+            position: relative;
+            // display: block;
+
+            &--button {
+              display: block;
+              width: 12rem;
+              height: 4rem;
+              background-color: mixin.$light-red;
+              font-family: mixin.$Noto;
+              color: mixin.$white;
+              font-size: 1.4rem;
+              font-weight: mixin.$medium;
+              line-height: 4rem;
+              letter-spacing: 0.1em;
+              text-align: center;
+              border-radius: 2rem;
+
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+
+              &:hover {
+                background-color: mixin.$deep-red;
+              }
+            }
+          }
+        }
+      }
+
+      // SP版
+      &--table-sp {
+        display: none;
+        width: 45rem;
+        margin-top: 2rem;
+        border-collapse: collapse;
+        margin-bottom: 4rem;
+        outline: 0.1rem solid #f7f7f7;
+
+        @include common.md {
+          display: block;
+        }
+
+        @include common.sp {
+          width: 33.5rem;
+        }
+
+        th,
+        td {
+          border-bottom: 0.1rem solid #f7f7f7;
+        }
+
+        .table-sp--line {
+          width: 100%;
+
+          &--text {
+            font-family: mixin.$Noto;
+            color: mixin.$gray;
+            font-size: 1.4rem;
+            font-weight: mixin.$regular;
+            line-height: 1.71;
+            letter-spacing: 0.06em;
+
+            &--content {
+              font-family: mixin.$Noto;
+              color: mixin.$gray;
+              font-size: 1.4rem;
+              font-weight: mixin.$regular;
+              line-height: 1.71;
+              letter-spacing: 0.06em;
+              padding: 2rem;
+              box-sizing: border-box;
+            }
+          }
+
+          &--time {
+            font-family: mixin.$Noto;
+            color: mixin.$gray;
+            font-size: 1.4rem;
+            font-weight: mixin.$regular;
+            line-height: 1.71;
+            letter-spacing: 0.06em;
+          }
+        }
+
+        .table-sp--block {
+          display: block;
+          width: 45rem;
+
+          @include common.sp {
+            width: 33.5rem;
+          }
+        }
+
+        .table-sp--flex {
+          display: flex;
+          width: 45rem;
+          justify-content: space-around;
+          align-items: center;
+
+          @include common.sp {
+            width: 33.5rem;
+          }
+
+          &--content {
+            width: calc(45rem / 2);
+            text-align: center;
+
+            @include common.sp {
+              width: calc(33.5rem / 2);
+            }
+          }
+        }
+
+        .table-sp--title {
+          height: 4.4rem;
+          background-color: #efefef;
+          line-height: 4.4rem;
+          box-sizing: border-box;
+
+          &--half {
+            width: calc(45rem / 2);
+
+            @include common.sp {
+              width: calc(33.5rem / 2);
+            }
+          }
+        }
+
+        .table-sp--place {
+          &--title {
+            display: block;
+            font-family: mixin.$Noto;
+            color: mixin.$pink;
+            font-size: 1.5rem;
+            font-weight: mixin.$medium;
+            line-height: 1.6;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.7rem;
+          }
+
+          &--text {
+            display: block;
+            font-family: mixin.$Noto;
+            color: mixin.$gray;
+            font-size: 1.4rem;
+            font-weight: mixin.$regular;
+            line-height: 1.71;
+            letter-spacing: 0.06em;
+          }
+        }
+
+        .table-sp--height {
+          height: 6.6rem;
+          line-height: 6.6rem;
+        }
+
+        .table-sp--reserve {
+          border-left: 0.1rem solid #f7f7f7;
+
+          a {
+            display: block;
+            width: 12rem;
+            height: 4rem;
+            background-color: #de4e4e;
+            line-height: 4rem;
+            letter-spacing: 0.1em;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            text-align: center;
+            border-radius: 2rem;
+            margin: 1rem auto;
+            color: #ffffff;
+
+            &:hover {
+              background-color: mixin.$deep-red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 「フォーム」ページ
+  .form {
+    &__method {
+      width: 100rem;
+      // height: 26.2rem;
+      background-color: mixin.$off-white;
+      border-radius: 1rem;
+      border: 0.2rem dotted #efefef;
+      margin: 6rem auto 0;
+
+      @include common.lg {
+        width: 90rem;
+        // height: 30rem;
+      }
+
+      @include common.md {
+        width: 45rem;
+        // height: 40rem;
+      }
+
+      @include common.sp {
+        width: 33.5rem;
+        // height: 47.6rem;
+      }
+
+      &--title {
+        font-family: mixin.$Noto;
+        color: mixin.$gray;
+        font-size: 1.8rem;
+        font-weight: mixin.$medium;
+        line-height: 1.22;
+        letter-spacing: 0.06em;
+        margin: 3.5rem 3rem 2.2rem 3rem;
+
+        @include common.sp {
+          font-size: 1.6rem;
+          line-height: 1.19;
+          margin: 2.5rem 2rem 2.2rem;
+        }
+      }
+
+      &--text {
+        font-family: mixin.$Noto;
+        color: mixin.$gray;
+        font-size: 1.4rem;
+        font-weight: mixin.$regular;
+        line-height: 1.71;
+        letter-spacing: 0.06em;
+        // width: 94rem;
+        margin: 0 3rem 1.3rem;
+
+        @include common.sp {
+          margin: 0 2rem 1rem;
+        }
+      }
+
+      &--content {
+        font-family: mixin.$Noto;
+        color: mixin.$gray;
+        font-size: 1.4rem;
+        font-weight: mixin.$regular;
+        line-height: 1.71;
+        letter-spacing: 0.06em;
+        margin: 0.7rem 3rem 3.6rem 3rem;
+
+        @include common.sp {
+          margin: 0 2rem 2.6rem;
+        }
+      }
+
+      .date__method-sp {
+        &--img {
+          display: none;
+
+          @include common.sp {
+            display: flex;
+            flex-wrap: wrap;
+            width: 29.4rem;
+            margin: 1.6rem auto 0;
+            justify-content: space-between;
+
+            li {
+              width: 14.5rem;
+              padding-bottom: 0.4rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__content {
+      &--form-wrapper {
+        margin-top: 3.3rem;
+
+        table {
+          margin-bottom: 3rem;
+        }
+      }
+
+      &--cell {
+        display: flex;
+        align-items: center;
+        width: 100rem;
+        border-bottom: 0.1rem solid #efefef;
+        padding: 1.8rem 0;
+
+        @include common.lg {
+          width: 90rem;
+        }
+
+        @include common.md {
+          width: 45rem;
+          display: block;
+        }
+
+        @include common.sp {
+          width: 33.5rem;
+        }
+
+        &:first-of-type {
+          border-top: 0.1rem solid #efefef;
+        }
+
+        &--title {
+          font-family: mixin.$Noto;
+          color: mixin.$gray;
+          font-size: 1.4rem;
+          font-weight: mixin.$medium;
+          line-height: 1.71;
+          letter-spacing: 0.06em;
+          text-align: left;
+          width: 18.5rem;
+          display: flex;
+          justify-content: space-between;
+          margin: 0 10rem 0 3rem;
+
+          @include common.md {
+            width: auto;
+            justify-content: unset;
+            margin: 0 0 1.5rem 0;
+            white-space: nowrap;
+          }
+
+          br {
+            @include common.md {
+              display: none;
+            }
+          }
+
+          &--title {
+            margin-top: 1.6rem;
+
+            @include common.md {
+              margin-top: 0;
+            }
+          }
+        }
+
+        &--text {
+          .select__wrap {
+            position: relative;
+            width: 33rem;
+            height: 4.4rem;
+            margin-top: 1.8rem;
+            margin-bottom: 1.8rem;
+
+            @include common.md {
+              width: 45rem;
+              margin: 0 0 2rem;
+            }
+
+            @include common.sp {
+              width: 33.5rem;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              width: 0.6rem;
+              height: 0.66rem;
+              right: 2rem;
+              top: 50%;
+              transform: translateY(-50%) rotate(45deg);
+              border-right: 0.2rem solid #a5a5a5;
+              border-bottom: 0.2rem solid #a5a5a5;
+              pointer-events: none;
+            }
+
+            select {
+              appearance: none;
+              border: 0.1rem solid #efefef;
+              background-color: #fdfdfd;
+              width: 100%;
+              height: 100%;
+              padding-left: 2rem;
+              padding-right: 2rem;
+              font-family: mixin.$Noto;
+              color: mixin.$gray;
+              font-size: 1.4rem;
+              font-weight: mixin.$regular;
+              line-height: 1.71;
+              letter-spacing: 0.06em;
+              border-radius: 0.2rem;
+            }
+          }
+
+          input[type="text"],
+          textarea {
+            box-sizing: border-box;
+            border: 0.1rem solid #efefef;
+            background-color: mixin.$off-white;
+            width: 33rem;
+            height: 4.4rem;
+            padding: 1.4rem 0 1.4rem 2rem;
+            border-radius: 0.2rem;
+
+            font-family: mixin.$Noto;
+            color: #000;
+            font-size: 1.4rem;
+            font-weight: mixin.$regular;
+            line-height: 1.71;
+            letter-spacing: 0.06em;
+
+            @include common.md {
+              width: 45rem;
+            }
+
+            @include common.sp {
+              width: 33.5rem;
+            }
+          }
+        }
+
+        &--required {
+          font-family: mixin.$Noto;
+          font-size: 1.4rem;
+          background-color: mixin.$pink;
+          color: mixin.$white;
+          font-weight: mixin.$medium;
+          line-height: 2rem;
+          text-align: center;
+          width: 4.4rem;
+          height: 2rem;
+          border-radius: 0.2rem;
+          letter-spacing: 0.06em;
+
+          @include common.md {
+            font-size: 1.3rem;
+            margin-left: 1.5rem;
+          }
+        }
+
+        &--postscript {
+          font-family: mixin.$Noto;
+          color: mixin.$gray;
+          font-size: 1.3rem;
+          font-weight: mixin.$regular;
+          line-height: 1.85;
+          letter-spacing: 0.06em;
+          margin-top: 0.5rem;
+
+          @include common.md {
+            font-size: 1.2rem;
+            line-height: 2;
+          }
+        }
+      }
+
+      &--school {
+        input[type="text"] {
+          width: 64rem;
+          padding: 1.6rem 0 1.4rem 2rem;
+
+          @include common.lg {
+            width: 50rem;
+          }
+
+          @include common.md {
+            width: 45rem;
+          }
+
+          @include common.sp {
+            width: 33.5rem;
+          }
+        }
+      }
+
+      &--question {
+        align-items: flex-start;
+
+        textarea {
+          width: 65rem;
+          height: 16rem;
+
+          @include common.lg {
+            width: 48rem;
+          }
+
+          @include common.md {
+            width: 45rem;
+          }
+
+          @include common.sp {
+            width: 33.5rem;
+          }
+        }
+      }
+
+      &--submit {
+        button {
+          position: relative;
+          width: 26rem;
+          height: 6rem;
+          border: none;
+          background-color: mixin.$light-red;
+          border-radius: 3rem;
+          display: block;
+          margin: 0 auto;
+
+          span {
+            font-family: mixin.$Noto;
+            color: mixin.$white;
+            font-size: 1.6rem;
+            font-weight: mixin.$medium;
+            line-height: 1.1875;
+            letter-spacing: 0.1em;
+            text-align: center;
+          }
+
+          i {
+            position: absolute;
+            top: 50%;
+            right: 3rem;
+            transform: translateY(-50%);
+            color: mixin.$white;
+          }
+
+          &:hover {
+            background-color: mixin.$deep-red;
+          }
+        }
+      }
+
+      &--back {
+        margin-top: 3.4rem;
+        margin-bottom: 15.85rem;
+
+        @include common.md {
+          margin-top: 4.4rem;
+          margin-bottom: 12.4rem;
+        }
+
+        a {
+          font-family: mixin.$Noto;
+          color: #6c6c6c;
+          font-size: 1.4rem;
+          font-weight: mixin.$medium;
+          line-height: 1.71;
+          letter-spacing: 0.06em;
+          text-decoration: underline;
+
+          i {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  // 「完了」ページ
+  .complete {
+    &__content {
+      &--headline {
+        margin-bottom: 6.3rem;
+
+        @include common.md {
+          margin-bottom: 3.6rem;
+        }
+      }
+
+      &--document {
+        margin-bottom: 7rem;
+
+        @include common.md {
+          margin-bottom: 8rem;
+        }
+
+        &--content {
+          width: 80rem;
+          margin: 0 auto;
+
+          @include common.md {
+            width: 45rem;
+          }
+
+          @include common.sp {
+            width: 33.5rem;
+          }
+
+          #gfj_slideplayer_inline_frame {
+            box-shadow: rgb(0 0 0 / 10%) 0px 5px 40px !important;
+          }
+        }
+
+        // margin-bottom: 8rem;
+      }
+
+      &--back {
+        margin-top: 3.4rem;
+        margin-bottom: 15.85rem;
+
+        @include common.md {
+          margin-top: 4.4rem;
+          margin-bottom: 12.4rem;
+        }
+
+        a {
+          font-family: mixin.$Noto;
+          color: #6c6c6c;
+          font-size: 1.4rem;
+          font-weight: mixin.$medium;
+          line-height: 1.71;
+          letter-spacing: 0.06em;
+          text-decoration: underline;
+
+          i {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4.6rem;
+  background-color: mixin.$gray;
+
+  @include common.md {
+    height: 4.2rem;
+  }
+
+  p {
+    font-family: mixin.$Roboto;
+    color: mixin.$white;
+    font-size: 1.3rem;
+    font-weight: mixin.$regular;
+    line-height: 1.85;
+    letter-spacing: 0.06em;
+
+    line-height: 4.6rem;
+    text-align: center;
+
+    @include common.md {
+      font-size: 1.2rem;
+      line-height: 4.2rem;
+    }
+  }
+}

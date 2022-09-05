@@ -1,0 +1,1410 @@
+@charset "UTF-8";
+/*
+html5doctor.com Reset StyleSheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+/* change colors to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colors to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border color to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+/*********************************/
+/*            common             */
+/*********************************/
+/*********************************/
+/*             color             */
+/*********************************/
+/*********************************/
+/*          font-family          */
+/*********************************/
+/*********************************/
+/*         font-weight           */
+/*********************************/
+/*********************************/
+/*             text              */
+/*********************************/
+/*********************************/
+/*             font              */
+/*********************************/
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "Noto Sans JP", sans-serif;
+  overflow-x: hidden;
+}
+
+/*********************************/
+/*          responsive           */
+/*********************************/
+/*********************************/
+/*            display            */
+/*********************************/
+.display-lg {
+  display: block;
+}
+@media only screen and (max-width: 960px) {
+  .display-lg {
+    display: none;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .display-lg {
+    display: none;
+  }
+}
+
+.display-md {
+  display: none;
+}
+@media only screen and (max-width: 960px) {
+  .display-md {
+    display: block;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .display-md {
+    display: block;
+  }
+}
+
+.display-sp {
+  display: none;
+}
+@media only screen and (max-width: 960px) {
+  .display-sp {
+    display: none;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .display-sp {
+    display: block;
+  }
+}
+
+/*********************************/
+/*            PC Base            */
+/*********************************/
+/* 共通パーツ */
+html {
+  position: relative;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+main {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 1060px) {
+  main {
+    max-width: 90rem;
+  }
+}
+@media only screen and (max-width: 960px) {
+  main {
+    max-width: 45rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  main {
+    max-width: 33.5rem;
+  }
+}
+
+.section-title {
+  margin-top: 7rem;
+}
+.section-title .common-title {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.21;
+  letter-spacing: 0.1em;
+  margin-bottom: 3.5rem;
+}
+@media only screen and (max-width: 520px) {
+  .section-title .common-title {
+    font-size: 2.2rem;
+    line-height: 1.18;
+    margin-bottom: 2.3rem;
+  }
+}
+.section-title .common-text {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+@media only screen and (max-width: 520px) {
+  .section-title .common-text {
+    font-size: 1.4rem;
+    line-height: 1.71;
+  }
+}
+
+.topic-path {
+  margin-top: 10.6rem;
+}
+@media only screen and (max-width: 960px) {
+  .topic-path {
+    margin-top: 7.2rem;
+  }
+}
+.topic-path ul {
+  display: flex;
+  text-align: center;
+  width: 53.7rem;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 960px) {
+  .topic-path ul {
+    width: 30.8rem;
+  }
+}
+.topic-path ul li {
+  width: 7.5rem;
+  position: relative;
+}
+@media only screen and (max-width: 960px) {
+  .topic-path ul li {
+    width: 6.2rem;
+  }
+}
+.topic-path ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 10rem;
+  height: 0.2rem;
+  background-color: #F7F7F7;
+  top: 2rem;
+  left: 6.4rem;
+}
+@media only screen and (max-width: 960px) {
+  .topic-path ul li:not(:last-child)::after {
+    width: 4.5rem;
+    top: 1.5rem;
+    left: 5rem;
+  }
+}
+.topic-path ul li .topic-path__num {
+  font-family: "Roboto", sans-serif;
+  color: #333333;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 3.6rem;
+  margin: 0 auto 2rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  background-color: #F7F7F7;
+  border: 0.2rem solid #F7F7F7;
+}
+@media only screen and (max-width: 960px) {
+  .topic-path ul li .topic-path__num {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    margin: 0 auto 1rem;
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
+.topic-path ul li .topic-path__text {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #6c6c6c;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.21;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 960px) {
+  .topic-path ul li .topic-path__text {
+    font-size: 1.2rem;
+    line-height: 1.17;
+  }
+}
+.topic-path ul li .current-position__num {
+  color: #FFFFFF;
+  background-color: #EB6E8F;
+  border: 0.2rem solid #EB6E8F;
+}
+.topic-path ul li .current-position__text {
+  color: #EB6E8F;
+}
+.topic-path ul li .before-position__num {
+  color: #EB6E8F;
+  background-color: #FFFFFF;
+  border: 0.2rem solid #EB6E8F;
+}
+.topic-path ul li .before-position__text {
+  color: #EB6E8F;
+}
+.topic-path ul .before-position__path::after {
+  background-color: #EB6E8F !important;
+}
+
+.content-back {
+  margin-top: 3.4rem;
+  margin-bottom: 15.85rem;
+}
+@media only screen and (max-width: 960px) {
+  .content-back {
+    margin-top: 4.4rem;
+    margin-bottom: 12.4rem;
+  }
+}
+.content-back a {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #6c6c6c;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+  text-decoration: underline;
+}
+.content-back a:hover {
+  opacity: 0.6;
+}
+.content-back a i {
+  margin-right: 1rem;
+}
+
+/* 個別パーツ */
+.header {
+  width: 100%;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0.6rem 0 rgba(175, 175, 175, 0.16);
+}
+@media only screen and (max-width: 960px) {
+  .header {
+    height: 3.2rem;
+  }
+}
+.header__logo {
+  height: 3rem;
+  margin-left: 3rem;
+}
+@media only screen and (max-width: 960px) {
+  .header__logo {
+    height: 2rem;
+    margin-left: 2rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .header__logo {
+    display: flex;
+    align-items: center;
+    height: auto;
+    max-width: 90%;
+    max-height: 2rem;
+  }
+}
+.header__logo img {
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-width: 960px) {
+  .header__logo img:nth-of-type(1) {
+    display: none;
+  }
+}
+.header__logo img:nth-of-type(2) {
+  display: none;
+}
+@media only screen and (max-width: 960px) {
+  .header__logo img:nth-of-type(2) {
+    display: block;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .header__logo img {
+    max-height: 2rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .header__logo a {
+    height: auto;
+    max-width: 90%;
+    max-height: 2rem;
+  }
+}
+.header__logo a:hover {
+  opacity: 0.6;
+}
+
+#index .area__content {
+  position: relative;
+  height: 50rem;
+  margin-bottom: 15.6rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .area__content {
+    height: auto;
+    margin-bottom: auto;
+  }
+}
+#index .area__content--text {
+  width: 52.3rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .area__content--text {
+    width: auto;
+  }
+}
+#index .area__content--button {
+  width: 14.4rem;
+  height: 4rem;
+  border-radius: 2rem;
+  background-color: #DE4E4E;
+}
+#index .area__content--button:hover {
+  background-color: #9F1A1A;
+}
+#index .area__content--button a {
+  display: flex;
+  align-items: center;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 4rem;
+  letter-spacing: 0.1em;
+  justify-content: center;
+}
+#index .area__content--button--name {
+  margin-right: 1.5rem;
+}
+#index .area__content--map {
+  position: absolute;
+  width: 64rem;
+  height: 47rem;
+  top: 1.3rem;
+  right: 7.7rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .area__content--map {
+    display: none;
+  }
+}
+#index .area__content--map img {
+  width: 100%;
+  height: 100%;
+}
+#index .area__content--map .hokkaido-btn {
+  position: absolute;
+  top: 6rem;
+  right: -7.5rem;
+  width: calc(14.4rem + 1em);
+}
+#index .area__content--map .tohoku-btn {
+  position: absolute;
+  top: 17rem;
+  right: -2rem;
+}
+#index .area__content--map .kanto-btn {
+  position: absolute;
+  top: 29rem;
+  right: 2.5rem;
+}
+#index .area__content--map .tyubu-btn {
+  position: absolute;
+  top: 27rem;
+  right: 23rem;
+}
+#index .area__content--map .nishinihon-btn {
+  position: absolute;
+  top: 34.5rem;
+  right: 33rem;
+  width: calc(14.4rem + 1em);
+}
+#index .area__content--map .kyusyu-btn {
+  position: absolute;
+  top: 38.5rem;
+  right: 50rem;
+}
+#index .area__content--map-sp {
+  display: none;
+}
+@media only screen and (max-width: 960px) {
+  #index .area__content--map-sp {
+    display: block;
+    width: 45rem;
+    margin-top: 3.6rem;
+    padding-bottom: 12.2rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  #index .area__content--map-sp {
+    width: 33.5rem;
+  }
+}
+#index .area__content--map-sp ul li {
+  border-bottom: 0.1rem solid #efefef;
+  border-right: 0.1rem solid #efefef;
+  border-left: 0.1rem solid #efefef;
+}
+#index .area__content--map-sp ul li:first-of-type {
+  border-top: 0.1rem solid #efefef;
+}
+#index .area__content--map-cell {
+  width: 40.5rem;
+  justify-content: space-between;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #6c6c6c;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 5rem;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+@media only screen and (max-width: 520px) {
+  #index .area__content--map-cell {
+    width: 29.5rem;
+  }
+}
+#index .area__content--map-cell--name {
+  display: block;
+}
+#index .date__method {
+  width: 100rem;
+  height: 26.2rem;
+  background-color: #F7F7F7;
+  border-radius: 1rem;
+  border: 0.2rem dotted #efefef;
+  margin: 6rem auto 0;
+}
+@media only screen and (max-width: 1060px) {
+  #index .date__method {
+    width: 90rem;
+    height: 30rem;
+  }
+}
+@media only screen and (max-width: 960px) {
+  #index .date__method {
+    width: 45rem;
+    height: 40rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  #index .date__method {
+    width: 33.5rem;
+    height: auto;
+  }
+}
+#index .date__method--title {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: 0.06em;
+  margin: 3.5rem 3rem 1.8rem 3rem;
+}
+@media only screen and (max-width: 520px) {
+  #index .date__method--title {
+    font-size: 1.6rem;
+    line-height: 1.19;
+    margin: 2.5rem 2rem 2.3rem;
+  }
+}
+#index .date__method--text {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+  margin: 0 3rem;
+}
+@media only screen and (max-width: 520px) {
+  #index .date__method--text {
+    margin: 0 2rem;
+  }
+}
+#index .date__method--img {
+  display: flex;
+  padding: 3rem 3rem 0;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 960px) {
+  #index .date__method--img {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 520px) {
+  #index .date__method--img {
+    display: none;
+  }
+}
+#index .date__method--img li {
+  width: 21rem;
+}
+@media only screen and (max-width: 1060px) {
+  #index .date__method--img li {
+    width: 19rem;
+    padding-bottom: 1rem;
+  }
+}
+#index .date__method-sp--img {
+  display: none;
+}
+@media only screen and (max-width: 520px) {
+  #index .date__method-sp--img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 29.4rem;
+    margin: 1.6rem auto 0;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+  }
+  #index .date__method-sp--img li {
+    width: 14.5rem;
+    padding-bottom: 0.4rem;
+  }
+}
+#index .date__content--text {
+  width: 88.2rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .date__content--text {
+    max-width: 45rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  #index .date__content--text {
+    max-width: 33.5rem;
+  }
+}
+#index .date__content--schedule {
+  margin-top: 6.8rem;
+}
+#index .date__content--subtitle {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+  border-bottom: 0.2rem dotted #F7F7F7;
+}
+#index .date__content--subtitle em {
+  font-size: 1.8rem;
+  line-height: 1.34;
+  color: #EB6E8F;
+  font-style: normal;
+  margin-right: 0.5rem;
+}
+#index .date__content--table {
+  width: 100rem;
+  margin-top: 2rem;
+  border-collapse: collapse;
+}
+@media only screen and (max-width: 1060px) {
+  #index .date__content--table {
+    max-width: 90rem;
+  }
+}
+@media only screen and (max-width: 960px) {
+  #index .date__content--table {
+    display: none;
+  }
+}
+#index .date__content--table th,
+#index .date__content--table td {
+  border: solid 0.1rem #efefef;
+}
+#index .date__content--table--title {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 6rem;
+  letter-spacing: 0.06em;
+  background-color: #F7F7F7;
+}
+#index .date__content--table .table__date {
+  width: 18rem;
+  text-align: center;
+  vertical-align: middle;
+}
+#index .date__content--table .table__date--content {
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+}
+#index .date__content--table .table__place {
+  width: 46rem;
+  text-align: center;
+  vertical-align: middle;
+}
+#index .date__content--table .table__place--content {
+  vertical-align: middle;
+}
+#index .date__content--table .table__place--content--wrap {
+  width: 40rem;
+  margin: 0 auto;
+  min-height: 12rem;
+  display: table;
+}
+#index .date__content--table .table__place--content--text {
+  width: 40rem;
+  margin: 0 auto;
+  display: table-cell;
+  vertical-align: middle;
+}
+#index .date__content--table .table__place--content--title {
+  display: block;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  color: #EB6E8F;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+#index .date__content--table .table__place--content--sub {
+  display: block;
+  text-align: left;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+}
+#index .date__content--table .table__time {
+  width: 18rem;
+  text-align: center;
+  vertical-align: middle;
+  vertical-align: middle;
+}
+#index .date__content--table .table__time--content {
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 6rem;
+  letter-spacing: 0.06em;
+}
+#index .date__content--table .table__reserve {
+  width: 18rem;
+  text-align: center;
+}
+#index .date__content--table .table__reserve--content {
+  position: relative;
+}
+#index .date__content--table .table__reserve--content--button {
+  display: block;
+  width: 12rem;
+  height: 4rem;
+  background-color: #DE4E4E;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 4rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  border-radius: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#index .date__content--table .table__reserve--content--button:hover {
+  background-color: #9F1A1A;
+}
+#index .date__content--table-sp {
+  display: none;
+  width: 45rem;
+  margin-top: 2rem;
+  border-collapse: collapse;
+  margin-bottom: 4rem;
+  outline: 0.1rem solid #f7f7f7;
+}
+@media only screen and (max-width: 960px) {
+  #index .date__content--table-sp {
+    display: block;
+  }
+}
+@media only screen and (max-width: 520px) {
+  #index .date__content--table-sp {
+    width: 33.5rem;
+  }
+}
+#index .date__content--table-sp th,
+#index .date__content--table-sp td {
+  border-bottom: 0.1rem solid #f7f7f7;
+}
+#index .date__content--table-sp .table-sp--line {
+  width: 100%;
+}
+#index .date__content--table-sp .table-sp--line--text {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+}
+#index .date__content--table-sp .table-sp--line--text--content {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+#index .date__content--table-sp .table-sp--line--time {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+}
+#index .date__content--table-sp .table-sp--block {
+  display: block;
+  width: 45rem;
+}
+@media only screen and (max-width: 520px) {
+  #index .date__content--table-sp .table-sp--block {
+    width: 33.5rem;
+  }
+}
+#index .date__content--table-sp .table-sp--flex {
+  display: flex;
+  width: 45rem;
+  justify-content: space-around;
+  align-items: center;
+}
+@media only screen and (max-width: 520px) {
+  #index .date__content--table-sp .table-sp--flex {
+    width: 33.5rem;
+  }
+}
+#index .date__content--table-sp .table-sp--flex--content {
+  width: 22.5rem;
+  text-align: center;
+}
+@media only screen and (max-width: 520px) {
+  #index .date__content--table-sp .table-sp--flex--content {
+    width: 16.75rem;
+  }
+}
+#index .date__content--table-sp .table-sp--title {
+  height: 4.4rem;
+  background-color: #efefef;
+  line-height: 4.4rem;
+  box-sizing: border-box;
+}
+#index .date__content--table-sp .table-sp--title--half {
+  width: 22.5rem;
+}
+@media only screen and (max-width: 520px) {
+  #index .date__content--table-sp .table-sp--title--half {
+    width: 16.75rem;
+  }
+}
+#index .date__content--table-sp .table-sp--place--title {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #EB6E8F;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.7rem;
+}
+#index .date__content--table-sp .table-sp--place--text {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+}
+#index .date__content--table-sp .table-sp--height {
+  height: 6.6rem;
+  line-height: 6.6rem;
+}
+#index .date__content--table-sp .table-sp--reserve {
+  border-left: 0.1rem solid #f7f7f7;
+}
+#index .date__content--table-sp .table-sp--reserve a {
+  display: block;
+  width: 12rem;
+  height: 4rem;
+  background-color: #de4e4e;
+  line-height: 4rem;
+  letter-spacing: 0.1em;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 2rem;
+  margin: 1rem auto;
+  color: #ffffff;
+}
+#index .date__content--table-sp .table-sp--reserve a:hover {
+  background-color: #9F1A1A;
+}
+#index .form__method {
+  width: 100rem;
+  background-color: #F7F7F7;
+  border-radius: 1rem;
+  border: 0.2rem dotted #efefef;
+  margin: 6rem auto 0;
+}
+@media only screen and (max-width: 1060px) {
+  #index .form__method {
+    width: 90rem;
+  }
+}
+@media only screen and (max-width: 960px) {
+  #index .form__method {
+    width: 45rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  #index .form__method {
+    width: 33.5rem;
+  }
+}
+#index .form__method--title {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: 0.06em;
+  margin: 3.5rem 3rem 2.2rem 3rem;
+}
+@media only screen and (max-width: 520px) {
+  #index .form__method--title {
+    font-size: 1.6rem;
+    line-height: 1.19;
+    margin: 2.5rem 2rem 2.2rem;
+  }
+}
+#index .form__method--text {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+  margin: 0 3rem 1.3rem;
+}
+@media only screen and (max-width: 520px) {
+  #index .form__method--text {
+    margin: 0 2rem 1rem;
+  }
+}
+#index .form__method--content {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+  margin: 0.7rem 3rem 3.6rem 3rem;
+}
+@media only screen and (max-width: 520px) {
+  #index .form__method--content {
+    margin: 0 2rem 2.6rem;
+  }
+}
+#index .form__method .date__method-sp--img {
+  display: none;
+}
+@media only screen and (max-width: 520px) {
+  #index .form__method .date__method-sp--img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 29.4rem;
+    margin: 1.6rem auto 0;
+    justify-content: space-between;
+  }
+  #index .form__method .date__method-sp--img li {
+    width: 14.5rem;
+    padding-bottom: 0.4rem;
+  }
+}
+#index .form__content--form-wrapper {
+  margin-top: 3.3rem;
+}
+#index .form__content--form-wrapper table {
+  margin-bottom: 3rem;
+}
+#index .form__content--cell {
+  display: flex;
+  align-items: center;
+  width: 100rem;
+  border-bottom: 0.1rem solid #efefef;
+  padding: 1.8rem 0;
+}
+@media only screen and (max-width: 1060px) {
+  #index .form__content--cell {
+    width: 90rem;
+  }
+}
+@media only screen and (max-width: 960px) {
+  #index .form__content--cell {
+    width: 45rem;
+    display: block;
+  }
+}
+@media only screen and (max-width: 520px) {
+  #index .form__content--cell {
+    width: 33.5rem;
+  }
+}
+#index .form__content--cell:first-of-type {
+  border-top: 0.1rem solid #efefef;
+}
+#index .form__content--cell--title {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+  text-align: left;
+  width: 18.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10rem 0 3rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .form__content--cell--title {
+    width: auto;
+    justify-content: unset;
+    margin: 0 0 1.5rem 0;
+    white-space: nowrap;
+  }
+}
+@media only screen and (max-width: 960px) {
+  #index .form__content--cell--title br {
+    display: none;
+  }
+}
+#index .form__content--cell--title--title {
+  margin-top: 1.6rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .form__content--cell--title--title {
+    margin-top: 0;
+  }
+}
+#index .form__content--cell--text .select__wrap {
+  position: relative;
+  width: 33rem;
+  height: 4.4rem;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .form__content--cell--text .select__wrap {
+    width: 45rem;
+    margin: 0 0 2rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  #index .form__content--cell--text .select__wrap {
+    width: 33.5rem;
+  }
+}
+#index .form__content--cell--text .select__wrap::after {
+  content: "";
+  position: absolute;
+  width: 0.6rem;
+  height: 0.66rem;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  border-right: 0.2rem solid #a5a5a5;
+  border-bottom: 0.2rem solid #a5a5a5;
+  pointer-events: none;
+}
+#index .form__content--cell--text .select__wrap select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0.1rem solid #efefef;
+  background-color: #fdfdfd;
+  width: 100%;
+  height: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+  border-radius: 0.2rem;
+}
+#index .form__content--cell--text input[type=text],
+#index .form__content--cell--text textarea {
+  box-sizing: border-box;
+  border: 0.1rem solid #efefef;
+  background-color: #F7F7F7;
+  width: 33rem;
+  height: 4.4rem;
+  padding: 1.4rem 0 1.4rem 2rem;
+  border-radius: 0.2rem;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+}
+@media only screen and (max-width: 960px) {
+  #index .form__content--cell--text input[type=text],
+#index .form__content--cell--text textarea {
+    width: 45rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  #index .form__content--cell--text input[type=text],
+#index .form__content--cell--text textarea {
+    width: 33.5rem;
+  }
+}
+#index .form__content--cell--required {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.4rem;
+  background-color: #EB6E8F;
+  color: #FFFFFF;
+  font-weight: 500;
+  line-height: 2rem;
+  text-align: center;
+  width: 4.4rem;
+  height: 2rem;
+  border-radius: 0.2rem;
+  letter-spacing: 0.06em;
+}
+@media only screen and (max-width: 960px) {
+  #index .form__content--cell--required {
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+  }
+}
+#index .form__content--cell--postscript {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333333;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.85;
+  letter-spacing: 0.06em;
+  margin-top: 0.5rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .form__content--cell--postscript {
+    font-size: 1.2rem;
+    line-height: 2;
+  }
+}
+#index .form__content--school input[type=text] {
+  width: 64rem;
+  padding: 1.6rem 0 1.4rem 2rem;
+}
+@media only screen and (max-width: 1060px) {
+  #index .form__content--school input[type=text] {
+    width: 50rem;
+  }
+}
+@media only screen and (max-width: 960px) {
+  #index .form__content--school input[type=text] {
+    width: 45rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  #index .form__content--school input[type=text] {
+    width: 33.5rem;
+  }
+}
+#index .form__content--question {
+  align-items: flex-start;
+}
+#index .form__content--question textarea {
+  width: 65rem;
+  height: 16rem;
+}
+@media only screen and (max-width: 1060px) {
+  #index .form__content--question textarea {
+    width: 48rem;
+  }
+}
+@media only screen and (max-width: 960px) {
+  #index .form__content--question textarea {
+    width: 45rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  #index .form__content--question textarea {
+    width: 33.5rem;
+  }
+}
+#index .form__content--submit button {
+  position: relative;
+  width: 26rem;
+  height: 6rem;
+  border: none;
+  background-color: #DE4E4E;
+  border-radius: 3rem;
+  display: block;
+  margin: 0 auto;
+}
+#index .form__content--submit button span {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.1875;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+#index .form__content--submit button i {
+  position: absolute;
+  top: 50%;
+  right: 3rem;
+  transform: translateY(-50%);
+  color: #FFFFFF;
+}
+#index .form__content--submit button:hover {
+  background-color: #9F1A1A;
+}
+#index .form__content--back {
+  margin-top: 3.4rem;
+  margin-bottom: 15.85rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .form__content--back {
+    margin-top: 4.4rem;
+    margin-bottom: 12.4rem;
+  }
+}
+#index .form__content--back a {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #6c6c6c;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+  text-decoration: underline;
+}
+#index .form__content--back a i {
+  margin-right: 1rem;
+}
+#index .complete__content--headline {
+  margin-bottom: 6.3rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .complete__content--headline {
+    margin-bottom: 3.6rem;
+  }
+}
+#index .complete__content--document {
+  margin-bottom: 7rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .complete__content--document {
+    margin-bottom: 8rem;
+  }
+}
+#index .complete__content--document--content {
+  width: 80rem;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 960px) {
+  #index .complete__content--document--content {
+    width: 45rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  #index .complete__content--document--content {
+    width: 33.5rem;
+  }
+}
+#index .complete__content--document--content #gfj_slideplayer_inline_frame {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 40px !important;
+}
+#index .complete__content--back {
+  margin-top: 3.4rem;
+  margin-bottom: 15.85rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .complete__content--back {
+    margin-top: 4.4rem;
+    margin-bottom: 12.4rem;
+  }
+}
+#index .complete__content--back a {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #6c6c6c;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.71;
+  letter-spacing: 0.06em;
+  text-decoration: underline;
+}
+#index .complete__content--back a i {
+  margin-right: 1rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4.6rem;
+  background-color: #333333;
+}
+@media only screen and (max-width: 960px) {
+  .footer {
+    height: 4.2rem;
+  }
+}
+.footer p {
+  font-family: "Roboto", sans-serif;
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.85;
+  letter-spacing: 0.06em;
+  line-height: 4.6rem;
+  text-align: center;
+}
+@media only screen and (max-width: 960px) {
+  .footer p {
+    font-size: 1.2rem;
+    line-height: 4.2rem;
+  }
+}/*# sourceMappingURL=style.css.map */
