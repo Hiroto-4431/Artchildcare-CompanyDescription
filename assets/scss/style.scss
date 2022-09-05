@@ -37,7 +37,11 @@ main {
 
 // タイトル
 .section-title {
-  margin-top: 7rem;
+  margin-top: 6.7rem;
+
+  @include common.md {
+    margin-top: 4.7rem;
+  }
 
   .common-title {
     font-family: mixin.$Noto;
@@ -548,6 +552,10 @@ main {
 
       &--schedule {
         margin-top: 6.8rem;
+
+        @include common.md {
+          margin-top: 4rem;
+        }
       }
 
       &--subtitle {
@@ -558,6 +566,7 @@ main {
         line-height: 1.71;
         letter-spacing: 0.06em;
         border-bottom: 0.2rem dotted mixin.$off-white;
+        padding-bottom: 1rem;
 
         em {
           font-size: 1.8rem;
@@ -915,7 +924,6 @@ main {
         color: mixin.$gray;
         font-size: 1.4rem;
         font-weight: mixin.$regular;
-        line-height: 1.71;
         letter-spacing: 0.06em;
         // width: 94rem;
         margin: 0 3rem 1.3rem;
@@ -932,10 +940,14 @@ main {
         font-weight: mixin.$regular;
         line-height: 1.71;
         letter-spacing: 0.06em;
-        margin: 0.7rem 3rem 3.6rem 3rem;
+        margin: 2rem 3rem 3.6rem 3rem;
+
+        @include common.md {
+          margin-top: 2.5rem;
+        }
 
         @include common.sp {
-          margin: 0 2rem 2.6rem;
+          margin: 2.5rem 2rem 2.6rem;
         }
       }
 
@@ -1032,12 +1044,9 @@ main {
             position: relative;
             width: 33rem;
             height: 4.4rem;
-            margin-top: 1.8rem;
-            margin-bottom: 1.8rem;
 
             @include common.md {
               width: 45rem;
-              margin: 0 0 2rem;
             }
 
             @include common.sp {

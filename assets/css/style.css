@@ -214,7 +214,12 @@ main {
 }
 
 .section-title {
-  margin-top: 7rem;
+  margin-top: 6.7rem;
+}
+@media only screen and (max-width: 960px) {
+  .section-title {
+    margin-top: 4.7rem;
+  }
 }
 .section-title .common-title {
   font-family: "Noto Sans JP", sans-serif;
@@ -692,6 +697,11 @@ main {
 #index .date__content--schedule {
   margin-top: 6.8rem;
 }
+@media only screen and (max-width: 960px) {
+  #index .date__content--schedule {
+    margin-top: 4rem;
+  }
+}
 #index .date__content--subtitle {
   font-family: "Noto Sans JP", sans-serif;
   color: #333333;
@@ -700,6 +710,7 @@ main {
   line-height: 1.71;
   letter-spacing: 0.06em;
   border-bottom: 0.2rem dotted #F7F7F7;
+  padding-bottom: 1rem;
 }
 #index .date__content--subtitle em {
   font-size: 1.8rem;
@@ -1017,7 +1028,6 @@ main {
   color: #333333;
   font-size: 1.4rem;
   font-weight: 300;
-  line-height: 1.71;
   letter-spacing: 0.06em;
   margin: 0 3rem 1.3rem;
 }
@@ -1033,11 +1043,16 @@ main {
   font-weight: 300;
   line-height: 1.71;
   letter-spacing: 0.06em;
-  margin: 0.7rem 3rem 3.6rem 3rem;
+  margin: 2rem 3rem 3.6rem 3rem;
+}
+@media only screen and (max-width: 960px) {
+  #index .form__method--content {
+    margin-top: 2.5rem;
+  }
 }
 @media only screen and (max-width: 520px) {
   #index .form__method--content {
-    margin: 0 2rem 2.6rem;
+    margin: 2.5rem 2rem 2.6rem;
   }
 }
 #index .form__method .date__method-sp--img {
@@ -1126,13 +1141,10 @@ main {
   position: relative;
   width: 33rem;
   height: 4.4rem;
-  margin-top: 1.8rem;
-  margin-bottom: 1.8rem;
 }
 @media only screen and (max-width: 960px) {
   #index .form__content--cell--text .select__wrap {
     width: 45rem;
-    margin: 0 0 2rem;
   }
 }
 @media only screen and (max-width: 520px) {
